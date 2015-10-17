@@ -1,0 +1,321 @@
+/* 
+programmer = keith Murphy
+file = styles.scss
+date Created = 9-9-2015
+last Mod = 9-9-2015
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain);
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// This is for the site menu 
+@import "compass/css3";
+// General Styles 
+* {
+  box-sizing: border-box;
+}
+
+html, body { min-height: 100%; }
+a { text-decoration: none; }
+
+.displayFlex {
+  display: flex;
+}
+.floatLeft {
+    float: left;
+}
+.clearBoth {
+    clear: both;
+}
+.menuButton  {
+  display: block;
+  border: 1px solid #fff;
+  padding: 1em;
+  text-align: center;
+
+}
+/*---Sart Nav functions--*/
+
+.main-header {
+  /* background: linear-gradient(#3F94BF, #246485); */
+    padding: 5px;
+    text-align: center;
+    color: white;
+    text-shadow: #222 0px -1px 1px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    transition: all 1s ease;
+    z-index:  100;
+    a {
+        position: absolute;
+        left: 95%;
+        top: 20px;
+        color: white;
+        font-size: 32px;
+    }
+}
+
+.page-wrap {
+    float: right;
+    width: 100%;
+    transition: width 1s ease;
+}
+
+.hiddenContent {
+    position: fixed;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #353535;
+    overflow-y: auto;
+    transition: width 1s ease;
+    z-index: 99;
+    a {
+        display: block;
+        color: white;
+        padding: 1em;
+        &:hover, &:focus {
+    
+        }   
+    }
+    .displayFlex > div {
+        width: 30%;
+        margin: 2% auto;
+        display: block;
+        position: relative; 
+    }
+    :last-child {
+        margin: 0 5% 0 0;
+    }
+    .icon {
+        display: block;
+        margin: 0 auto;
+    }
+    .portfolioMenuIconTwo {
+        position: absolute;
+        left: 28%;
+        top: 0;
+    }
+    h2 {  
+        color: #fff;
+        font-size: 2em;
+        text-align: center;
+        margin: 2%;
+    }
+    p {
+        color: white;
+        padding: 4%;
+        font-size: 1.25em;
+    }
+} // end hiddenContent
+
+
+.close-menu {
+  display: none;
+}
+
+#hiddenContent:target {
+  width: 100%;
+}
+#hiddenContent:target + .page-wrap {
+  width: 100%;
+  .open-menu {
+     display: none; 
+  }
+  .close-menu {
+     display: block;
+  }
+  .main-header {
+    width: 80%;
+    left: 20%;
+  }
+}
+// This the visible home page content 
+.homePageVisibleContent {
+        padding: 0;
+    h2 {
+        font-size: 2em;
+        margin: 2% auto;
+        text-align: center;
+    }
+    #sectionTwo {
+        position: relative;
+
+        .sectionTwoAnimations {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            h2 {
+                // position: absolute;
+                color: #555;
+                // left: 15%;
+                // top: 16%;
+                width: 100%;
+                height: auto;
+                display: block;
+                font-size: 6em;
+            }
+            :nth-child(1) .floatLeft:nth-child(3) {
+                margin: 12% 0 0 6%;
+            }
+            .homePageTwoHexTriangle {
+                // position: absolute;
+                // left: 10%;
+                // top: 10%;
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(1) .floatLeft:nth-child(2) {
+                margin: 13% 0 0 4%;
+            }
+            .homePageTwoTitleBullet {
+                // position: absolute;
+                // left: 32%;
+                // top: 21%;
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(1) .floatLeft:nth-child(1) {
+                margin: 5% 0 0 5%;
+            }
+            .homePageTwoBulletLines {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) .floatLeft:nth-child(1) {
+                margin: -2% 0 0 36%;
+                display: block;
+            }
+            .homePageTwoSmallHeaderHexOne {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) .floatLeft:nth-child(2) {
+                margin: -4% 0 0 2%;
+                display: block;
+            }
+            .homePageTwoSmallHeaderHexTwo {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) .floatLeft:nth-child(3) {
+                margin: 10% 0 0 -5%;
+            }
+            .homePageTwoSmallHeaderHexThree{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) .floatLeft:nth-child(4) {
+                margin: 24% 0 0 -5%;
+            }
+        } // end sectionTwoAnimations
+    } // end #sectionTwo
+    #sectionThree {
+        position: relative;
+        .homePageThreeImgsDiv {
+            min-width: 100%;
+            flex-direction: column;
+        }
+        h2 {
+            color: #fff;
+        }
+        // .fp-tableCell {
+        //     display: flex;
+        //     justify-content: space-around;
+        //     align-items: center;
+        // }
+        .displayFlexImgs {
+            display: flex;
+            justify-content: space-around;
+            margin: 2% auto;
+            // transform: translateX(-2000px);
+            img {
+                max-width: 100%;
+            }
+        }
+        .homePageFeaturedOne {
+           margin: 0 auto;
+           width: 100%;
+           transform: translateX(-2000px);
+        }
+        .homePageFeaturedTwo {
+           margin: 0 auto;
+           width: 100%;
+           transform: translateY(-3000px);
+        }
+        .homePageFeaturedThree {
+            margin: 0 auto;
+            width: 100%;
+            transform: translateX(-2000px);
+        }
+    } // End sectionThree
+    #sectionFour {
+        .flexParent {
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            div.displayFlex {
+                
+                justify-content: space-around;
+                img {
+                    
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+    } // End #sectionFour 
+} // End visible 

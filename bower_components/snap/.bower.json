@@ -1,0 +1,11 @@
+{
+  "name": "snap",
+  "_cacheHeaders": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index.svg",
+  "_source": "https://github.com/adobe-webplatform/snap.svg",
+  "_target": "*",
+  "_originalSource": "https://github.com/adobe-webplatform/snap.svg",
+  "_direct": true
+}

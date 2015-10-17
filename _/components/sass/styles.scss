@@ -1,0 +1,453 @@
+/* 
+programmer = keith Murphy
+file = styles.scss
+date Created = 9-9-2015
+last Mod = 9-15-2015
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain);
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// This is for the site menu 
+@import "compass/css3";
+// General Styles 
+* {
+  box-sizing: border-box;
+}
+
+html, body { min-height: 100%; }
+a { text-decoration: none; }
+
+.displayFlex {
+  display: flex;
+}
+.floatLeft {
+    float: left;
+}
+.clearBoth {
+    clear: both;
+}
+.menuButton  {
+  display: block;
+  padding: 1em;
+  text-align: center;
+
+}
+/*------start Fobnts----*/
+@font-face {
+    font-family: josefinRegular;
+    src: url('../_/fonts/josefin_regular.ttf');
+}
+@font-face {
+    font-family: josefinBold;
+    src: url('../_/fonts/josefin_bold.ttf');
+    font-weight: bold;
+}
+/*---Sart Nav functions--*/
+
+.main-header {
+  /* background: linear-gradient(#3F94BF, #246485); */
+    padding: 5px;
+    text-align: center;
+    color: white;
+    text-shadow: #222 0px -1px 1px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    transition: all 1s ease;
+    z-index:  100;
+    a {
+        position: absolute;
+        left: 95%;
+        top: 20px;
+        color: white;
+        font-size: 32px;
+    }
+}
+
+.page-wrap {
+    float: right;
+    width: 100%;
+    transition: width 1s ease;
+}
+
+.hiddenContent {
+    position: fixed;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #353535;
+    overflow-y: auto;
+    transition: width 1s ease;
+    z-index: 99;
+    a {
+        display: block;
+        color: white;
+        padding: 1em;
+        &:hover, &:focus {
+    
+        }   
+    }
+    .displayFlex > div {
+        width: 30%;
+        margin: 2% auto;
+        display: block;
+        position: relative; 
+    }
+    :last-child {
+        margin: 0 5% 0 0;
+    }
+    .icon {
+        display: block;
+        margin: 0 auto;
+    }
+    .portfolioMenuIconTwo {
+        position: absolute;
+        left: 28%;
+        top: 0;
+    }
+    h2 {  
+        color: #fff;
+        font-size: 2em;
+        text-align: center;
+        margin: 2%;
+    }
+    p {
+        color: white;
+        padding: 4%;
+        font-size: 1.25em;
+    }
+} // end hiddenContent
+
+
+.close-menu {
+  display: none;
+}
+
+#hiddenContent:target {
+  width: 100%;
+}
+#hiddenContent:target + .page-wrap {
+  width: 100%;
+  .open-menu {
+     display: none; 
+  }
+  .close-menu {
+     display: block;
+  }
+  .main-header {
+    width: 80%;
+    left: 20%;
+  }
+}
+/*-------button flipper styles----*/
+/* entire container, keeps perspective */
+.flip-container {
+    perspective: 1000;
+    p {
+        text-align: center;
+    }
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateX(-180deg);
+}
+
+.flip-container, .front, .back {
+    width: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    transform-origin: 100% 50%;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid #fff 1px;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateX(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateX(180deg);
+}
+/*-------end flippers Styles---*/
+// This the visible home page content 
+.homePageVisibleContent {
+        padding: 0;
+    h2 {
+        font-size: 2em;
+        margin: 2% auto;
+        text-align: center;
+    }
+    #sectionTwo {
+        position: relative;
+        z-index: 200;
+        .sectionTwoAnimations {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            h2 {
+                font-family: josefinBold, Arial, Helvetica, sans-serf;
+                color: #555;
+                width: 100%;
+                height: auto;
+                display: block;
+                font-size: 6em;
+                opacity: 0;
+                transform: translateX(2000px);
+            }
+            :nth-child(1) {
+                position: relative;
+                height: 50vh;
+            }
+            :nth-child(1) div:nth-child(3) {
+                position: absolute;
+                left: 45%;
+                top: 45%;
+                z-index: 230;
+            }
+            .homePageTwoHexTriangle {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(1) div:nth-child(2) {
+                position: absolute;
+                top: 44%;
+                left: 32%;
+                z-index: 220;
+            }
+            .homePageTwoTitleBullet {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(1) div:nth-child(1) {
+                z-index: 210;
+                position: absolute;
+                top: 20%;
+                left: 5%;
+            }
+            .homePageAnimationSectionTwo {
+                position: relative;
+                float: left;
+                margin: -5% 0 0 35%;
+                width: 100%;
+                height: 100vh;
+            }
+            .homePageTwoBulletLines {
+                width: 100%;
+                height: auto;
+                display: block;
+                
+            }
+            :nth-child(3) div:nth-child(1) {
+                position: absolute;
+                z-index: 240;
+                height: auto;
+            }
+            .homePageTwoSmallHeaderHexOne {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) div:nth-child(2) {
+                position: absolute;
+                display: block;
+                z-index: 250;
+                height: auto;
+                top: -4%;
+                left: 5%;
+            }
+            .homePageTwoSmallHeaderHexTwo {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) div:nth-child(3) {
+                position: absolute;
+                top: 16.5%;
+                left: 5%;
+                z-index: 260;
+                height: auto;
+            }
+            .homePageTwoSmallHeaderHexThree{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            :nth-child(3) div:nth-child(4) {
+                position: absolute;
+                top: 36%;
+                left: 5%;
+                z-index: 270;
+                height: auto;
+            }
+            h3 {
+                font-size: 3em;
+                font-family: josefinRegular, Arial, Helvetica, sans-serf; 
+                color: #555;
+            }
+            .homePageTwoSubTitles {
+                
+            }
+            .homePageTwoH3One {
+                height: auto;
+                width: 100%;
+            }
+            :nth-child(3) div:nth-child(5) {
+                position: absolute;
+                z-index: 280;
+                height: auto;
+                left: 13%;
+                top: -2%;
+            }
+            .homePageTwoH3Two {
+                height: auto;
+                width: 100%;
+            }
+            :nth-child(3) div:nth-child(6) {
+                position: absolute;
+                z-index: 290;
+                width: 100%;
+                height: auto;
+                top: 18%;
+                left: 13%;
+            }
+            .homePageTwoH3Three {
+                height: auto;
+                width: 100%;
+            }
+            :nth-child(3) div:nth-child(7) {
+                position: absolute;
+                z-index: 300;
+                width: 100%;
+                height: auto;
+                top: 38%;
+                left: 13%;
+            }
+
+        } // end sectionTwoAnimations
+    } // end #sectionTwo
+    #sectionThree {
+        position: relative;
+        .homePageThreeImgsDiv {
+            min-width: 100%;
+            flex-direction: column;
+        }
+        h2 {
+            color: #fff;
+        }
+        // .fp-tableCell {
+        //     display: flex;
+        //     justify-content: space-around;
+        //     align-items: center;
+        // }
+        .displayFlexImgs {
+            display: flex;
+            justify-content: space-around;
+            margin: 2% auto;
+            // transform: translateX(-2000px);
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        .homePageFeaturedOne {
+           margin: 0 auto;
+           width: 100%;
+           transform: translateX(-2000px);
+        }
+        .homePageFeaturedTwo {
+           margin: 0 auto;
+           width: 100%;
+           transform: translateY(-3000px);
+        }
+        .homePageFeaturedThree {
+            margin: 0 auto;
+            width: 100%;
+            transform: translateX(-2000px);
+        }
+    } // End sectionThree
+    #sectionFour {
+        .flexParent {
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            div.displayFlex {
+                justify-content: space-around;
+                margin: .5em; 
+                .homePageFourImg {
+                    // margin: 2% auto; 
+                    img {
+                    width: 95%;
+                    height: auto;
+                    display: block;
+                    margin: 2%;
+                    }
+                }
+            }
+        }
+    } // End #sectionFour 
+} // End visible 

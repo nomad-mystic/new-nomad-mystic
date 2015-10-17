@@ -1,0 +1,275 @@
+/* 
+programmer = keith Murphy
+file = styles.scss
+date Created = 9-9-2015
+last Mod = 9-9-2015
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain);
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  min-height: 100%; }
+
+a {
+  text-decoration: none; }
+
+.displayFlex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.floatLeft {
+  float: left; }
+
+.clearBoth {
+  clear: both; }
+
+.menuButton {
+  display: block;
+  border: 1px solid #fff;
+  padding: 1em;
+  text-align: center; }
+
+/*---Sart Nav functions--*/
+.main-header {
+  /* background: linear-gradient(#3F94BF, #246485); */
+  padding: 5px;
+  text-align: center;
+  color: white;
+  text-shadow: #222 0px -1px 1px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+  z-index: 100; }
+  .main-header a {
+    position: absolute;
+    left: 95%;
+    top: 20px;
+    color: white;
+    font-size: 32px; }
+
+.page-wrap {
+  float: right;
+  width: 100%;
+  -webkit-transition: width 1s ease;
+          transition: width 1s ease; }
+
+.hiddenContent {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #353535;
+  overflow-y: auto;
+  -webkit-transition: width 1s ease;
+          transition: width 1s ease;
+  z-index: 99; }
+  .hiddenContent a {
+    display: block;
+    color: white;
+    padding: 1em; }
+  .hiddenContent .displayFlex > div {
+    width: 30%;
+    margin: 2% auto;
+    display: block;
+    position: relative; }
+  .hiddenContent :last-child {
+    margin: 0 5% 0 0; }
+  .hiddenContent .icon {
+    display: block;
+    margin: 0 auto; }
+  .hiddenContent .portfolioMenuIconTwo {
+    position: absolute;
+    left: 28%;
+    top: 0; }
+  .hiddenContent h2 {
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    margin: 2%; }
+  .hiddenContent p {
+    color: white;
+    padding: 4%;
+    font-size: 1.25em; }
+
+.close-menu {
+  display: none; }
+
+#hiddenContent:target {
+  width: 100%; }
+
+#hiddenContent:target + .page-wrap {
+  width: 100%; }
+  #hiddenContent:target + .page-wrap .open-menu {
+    display: none; }
+  #hiddenContent:target + .page-wrap .close-menu {
+    display: block; }
+  #hiddenContent:target + .page-wrap .main-header {
+    width: 80%;
+    left: 20%; }
+
+.homePageVisibleContent {
+  padding: 0; }
+  .homePageVisibleContent h2 {
+    font-size: 2em;
+    margin: 2% auto;
+    text-align: center; }
+  .homePageVisibleContent #sectionTwo {
+    position: relative; }
+    .homePageVisibleContent #sectionTwo .sectionTwoAnimations {
+      position: relative;
+      height: 100vh;
+      width: 100%; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations h2 {
+        color: #555;
+        width: 100%;
+        height: auto;
+        display: block;
+        font-size: 6em; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(1) .floatLeft:nth-child(3) {
+        margin: 12% 0 0 6%; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoHexTriangle {
+        width: 100%;
+        height: auto;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(1) .floatLeft:nth-child(2) {
+        margin: 13% 0 0 4%; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoTitleBullet {
+        width: 100%;
+        height: auto;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(1) .floatLeft:nth-child(1) {
+        margin: 5% 0 0 5%; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoBulletLines {
+        width: 100%;
+        height: auto;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(3) .floatLeft:nth-child(1) {
+        margin: -2% 0 0 36%;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexOne {
+        width: 100%;
+        height: auto;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(3) .floatLeft:nth-child(2) {
+        margin: -4% 0 0 2%;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexTwo {
+        width: 100%;
+        height: auto;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(3) .floatLeft:nth-child(3) {
+        margin: 10% 0 0 -5%; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexThree {
+        width: 100%;
+        height: auto;
+        display: block; }
+      .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(3) .floatLeft:nth-child(4) {
+        margin: 24% 0 0 -5%; }
+  .homePageVisibleContent #sectionThree {
+    position: relative; }
+    .homePageVisibleContent #sectionThree .homePageThreeImgsDiv {
+      min-width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .homePageVisibleContent #sectionThree h2 {
+      color: #fff; }
+    .homePageVisibleContent #sectionThree .displayFlexImgs {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around;
+      margin: 2% auto; }
+      .homePageVisibleContent #sectionThree .displayFlexImgs img {
+        max-width: 100%; }
+    .homePageVisibleContent #sectionThree .homePageFeaturedOne {
+      margin: 0 auto;
+      width: 100%;
+      -webkit-transform: translateX(-2000px);
+          -ms-transform: translateX(-2000px);
+              transform: translateX(-2000px); }
+    .homePageVisibleContent #sectionThree .homePageFeaturedTwo {
+      margin: 0 auto;
+      width: 100%;
+      -webkit-transform: translateY(-3000px);
+          -ms-transform: translateY(-3000px);
+              transform: translateY(-3000px); }
+    .homePageVisibleContent #sectionThree .homePageFeaturedThree {
+      margin: 0 auto;
+      width: 100%;
+      -webkit-transform: translateX(-2000px);
+          -ms-transform: translateX(-2000px);
+              transform: translateX(-2000px); }
+  .homePageVisibleContent #sectionFour .flexParent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    width: 100%; }
+    .homePageVisibleContent #sectionFour .flexParent div.displayFlex {
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around; }
+      .homePageVisibleContent #sectionFour .flexParent div.displayFlex img {
+        display: block;
+        margin: 0 auto; }
