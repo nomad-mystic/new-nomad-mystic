@@ -4,11 +4,12 @@
 	date Created = 3-10-2015
 	Last Mod = 3-10-2015
 */
-$(document).ready(function() {	
-	
-	
+$(document).ready(function() {
+
+    // This is going to test pushing to github master 10_16_2015
 	///////////////////////////////////////// SectionThree
-	/// Hover events 
+	/// Hover events
+
 	// Eilixr 
 	$('.homePageFeaturedOne').mouseover(function() {
 		
