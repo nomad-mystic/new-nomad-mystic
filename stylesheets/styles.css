@@ -77,7 +77,7 @@ a {
   padding: 1em;
   text-align: center; }
 
-/*------start Fobnts----*/
+/*------start Fonts----*/
 @font-face {
   font-family: josefinRegular;
   src: url("../_/fonts/josefin_regular.ttf"); }
@@ -85,7 +85,30 @@ a {
   font-family: josefinBold;
   src: url("../_/fonts/josefin_bold.ttf");
   font-weight: bold; }
-/*---Sart Nav functions--*/
+@font-face {
+  font-family: fontawesome;
+  src: url("../_/fonts/font-awesome.min.css"); }
+/*---------font-awesome----*/
+.audioVideoControls .fa-play:hover {
+  color: black; }
+.audioVideoControls .fa-play:before {
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer; }
+.audioVideoControls .fa-pause:before {
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: color .25s ease-in-out;
+  transition: color .25s ease-in-out; }
+.audioVideoControls .fa-stop:before {
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: color .25s ease-in-out;
+  transition: color .25s ease-in-out; }
+
+/*---Start Nav functions--*/
 .main-header {
   /* background: linear-gradient(#3F94BF, #246485); */
   padding: 5px;
@@ -220,6 +243,40 @@ a {
     font-size: 2em;
     margin: 2% auto;
     text-align: center; }
+  .homePageVisibleContent #sectionOne .audioVideoControls {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(62, 59, 59, 0.45);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .homePageVisibleContent #sectionOne .audioVideoControls > div {
+    margin: 2%; }
+  .homePageVisibleContent #sectionOne .audioVideoControls p {
+    color: #ffffff;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.5); }
+  .homePageVisibleContent #sectionOne .progressbarContainer {
+    background-color: #e0e0e0;
+    height: 7px;
+    width: 256px;
+    border-radius: 2px; }
+  .homePageVisibleContent #sectionOne .audioVideoBar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    background-color: #1384bb;
+    height: 7px;
+    width: 0; }
   .homePageVisibleContent #sectionTwo {
     position: relative;
     z-index: 200; }
@@ -228,7 +285,7 @@ a {
       height: 100vh;
       width: 100%; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations h2 {
-        font-family: josefinBold, Arial, Helvetica, sans-serf;
+        font-family: josefinRegular, Arial, Helvetica, sans-serf;
         color: #555;
         width: 100%;
         height: auto;

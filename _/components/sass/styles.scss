@@ -79,7 +79,7 @@ a { text-decoration: none; }
   text-align: center;
 
 }
-/*------start Fobnts----*/
+/*------start Fonts----*/
 @font-face {
     font-family: josefinRegular;
     src: url('../_/fonts/josefin_regular.ttf');
@@ -89,10 +89,51 @@ a { text-decoration: none; }
     src: url('../_/fonts/josefin_bold.ttf');
     font-weight: bold;
 }
-/*---Sart Nav functions--*/
+@font-face {
+  font-family: fontawesome;
+  src: url('../_/fonts/font-awesome.min.css');
+}
+$font-stack: josefinRegular, Arial, Helvetica, sans-serf;
+/*---------font-awesome----*/
+.audioVideoControls {
+  .fa-play:hover {
+    color: rgba(0,0,0,1);
+  }
+  .fa-play:before {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    //-webkit-transition: color .25s ease-in-out;
+    //-moz-transition: color .25s ease-in-out;
+    //-ms-transition: color .25s ease-in-out;
+    //-o-transition: color .25s ease-in-out;
+    //transition: color .25s ease-in-out;
+  }
+  .fa-pause:before {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -ms-transition: color .25s ease-in-out;
+    -o-transition: color .25s ease-in-out;
+    transition: color .25s ease-in-out;
+  }
+  .fa-stop:before {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -ms-transition: color .25s ease-in-out;
+    -o-transition: color .25s ease-in-out;
+    transition: color .25s ease-in-out;
+  }
+}
+/*---Start Nav functions--*/
 
-.main-header {
-  /* background: linear-gradient(#3F94BF, #246485); */
+  .main-header {
+    /* background: linear-gradient(#3F94BF, #246485); */
     padding: 5px;
     text-align: center;
     color: white;
@@ -103,21 +144,21 @@ a { text-decoration: none; }
     transition: all 1s ease;
     z-index:  100;
     a {
-        position: absolute;
-        left: 95%;
-        top: 20px;
-        color: white;
-        font-size: 32px;
+      position: absolute;
+      left: 95%;
+      top: 20px;
+      color: white;
+      font-size: 32px;
     }
-}
+  }
 
-.page-wrap {
+  .page-wrap {
     float: right;
     width: 100%;
     transition: width 1s ease;
-}
+  }
 
-.hiddenContent {
+  .hiddenContent {
     position: fixed;
     top: 0;
     width: 0;
@@ -127,327 +168,365 @@ a { text-decoration: none; }
     transition: width 1s ease;
     z-index: 99;
     a {
-        display: block;
-        color: white;
-        padding: 1em;
-        &:hover, &:focus {
-    
-        }   
+      display: block;
+      color: white;
+      padding: 1em;
+      &:hover, &:focus {
+
+      }
     }
     .displayFlex > div {
-        width: 30%;
-        margin: 2% auto;
-        display: block;
-        position: relative; 
+      width: 30%;
+      margin: 2% auto;
+      display: block;
+      position: relative;
     }
     :last-child {
-        margin: 0 5% 0 0;
+      margin: 0 5% 0 0;
     }
     .icon {
-        display: block;
-        margin: 0 auto;
+      display: block;
+      margin: 0 auto;
     }
     .portfolioMenuIconTwo {
-        position: absolute;
-        left: 28%;
-        top: 0;
+      position: absolute;
+      left: 28%;
+      top: 0;
     }
-    h2 {  
-        color: #fff;
-        font-size: 2em;
-        text-align: center;
-        margin: 2%;
+    h2 {
+      color: #fff;
+      font-size: 2em;
+      text-align: center;
+      margin: 2%;
     }
     p {
-        color: white;
-        padding: 4%;
-        font-size: 1.25em;
+      color: white;
+      padding: 4%;
+      font-size: 1.25em;
     }
-} // end hiddenContent
+  } // end hiddenContent
 
 
-.close-menu {
-  display: none;
-}
-
-#hiddenContent:target {
-  width: 100%;
-}
-#hiddenContent:target + .page-wrap {
-  width: 100%;
-  .open-menu {
-     display: none; 
-  }
   .close-menu {
-     display: block;
+    display: none;
   }
-  .main-header {
-    width: 80%;
-    left: 20%;
+
+  #hiddenContent:target {
+    width: 100%;
   }
-}
-/*-------button flipper styles----*/
-/* entire container, keeps perspective */
-.flip-container {
+  #hiddenContent:target + .page-wrap {
+    width: 100%;
+    .open-menu {
+      display: none;
+    }
+    .close-menu {
+      display: block;
+    }
+    .main-header {
+      width: 80%;
+      left: 20%;
+    }
+  }
+  /*-------button flipper styles----*/
+  /* entire container, keeps perspective */
+  .flip-container {
     perspective: 1000;
     p {
-        text-align: center;
+      text-align: center;
     }
-}
-/* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
+  }
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
     transform: rotateX(-180deg);
-}
+  }
 
-.flip-container, .front, .back {
+  .flip-container, .front, .back {
     width: 100%;
-}
+  }
 
-/* flip speed goes here */
-.flipper {
+  /* flip speed goes here */
+  .flipper {
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
     transform-origin: 100% 50%;
-}
+  }
 
-/* hide back of pane during swap */
-.front, .back {
+  /* hide back of pane during swap */
+  .front, .back {
     backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
     border: solid #fff 1px;
-}
+  }
 
-/* front pane, placed above back */
-.front {
+  /* front pane, placed above back */
+  .front {
     z-index: 2;
     /* for firefox 31 */
     transform: rotateX(0deg);
-}
+  }
 
-/* back, initially hidden pane */
-.back {
+  /* back, initially hidden pane */
+  .back {
     transform: rotateX(180deg);
-}
-/*-------end flippers Styles---*/
-// This the visible home page content 
-.homePageVisibleContent {
-        padding: 0;
+  }
+  /*-------end flippers Styles---*/
+  // This the visible home page content 
+  .homePageVisibleContent {
+    padding: 0;
     h2 {
-        font-size: 2em;
-        margin: 2% auto;
-        text-align: center;
+      font-size: 2em;
+      margin: 2% auto;
+      text-align: center;
+    }
+    #sectionOne {
+      .audioVideoControls {
+        width: 100%;
+        height: 10%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba(62, 59, 59, 0.45);
+        display: flex;
+        flex-direction: row;
+      }
+      .audioVideoControls > div {
+        margin: 2%;
+
+      }
+      .audioVideoControls .playButton {
+
+      }
+      .audioVideoControls p {
+        color: #ffffff;
+        padding: 1em;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .progressbarContainer {
+        background-color:#e0e0e0;
+        height: 7px;
+        width: 256px;
+        border-radius: 2px
+      }
+      .audioVideoBar {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #1384bb;
+        height:7px;
+        width: 0;
+      }
+
     }
     #sectionTwo {
+      position: relative;
+      z-index: 200;
+      .sectionTwoAnimations {
         position: relative;
-        z-index: 200;
-        .sectionTwoAnimations {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            h2 {
-                font-family: josefinBold, Arial, Helvetica, sans-serf;
-                color: #555;
-                width: 100%;
-                height: auto;
-                display: block;
-                font-size: 6em;
-                opacity: 0;
-                transform: translateX(2000px);
-            }
-            :nth-child(1) {
-                position: relative;
-                height: 50vh;
-            }
-            :nth-child(1) div:nth-child(3) {
-                position: absolute;
-                left: 45%;
-                top: 45%;
-                z-index: 230;
-            }
-            .homePageTwoHexTriangle {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            :nth-child(1) div:nth-child(2) {
-                position: absolute;
-                top: 44%;
-                left: 32%;
-                z-index: 220;
-            }
-            .homePageTwoTitleBullet {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            :nth-child(1) div:nth-child(1) {
-                z-index: 210;
-                position: absolute;
-                top: 20%;
-                left: 5%;
-            }
-            .homePageAnimationSectionTwo {
-                position: relative;
-                float: left;
-                margin: -5% 0 0 35%;
-                width: 100%;
-                height: 100vh;
-            }
-            .homePageTwoBulletLines {
-                width: 100%;
-                height: auto;
-                display: block;
-                
-            }
-            :nth-child(3) div:nth-child(1) {
-                position: absolute;
-                z-index: 240;
-                height: auto;
-            }
-            .homePageTwoSmallHeaderHexOne {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            :nth-child(3) div:nth-child(2) {
-                position: absolute;
-                display: block;
-                z-index: 250;
-                height: auto;
-                top: -4%;
-                left: 5%;
-            }
-            .homePageTwoSmallHeaderHexTwo {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            :nth-child(3) div:nth-child(3) {
-                position: absolute;
-                top: 16.5%;
-                left: 5%;
-                z-index: 260;
-                height: auto;
-            }
-            .homePageTwoSmallHeaderHexThree{
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            :nth-child(3) div:nth-child(4) {
-                position: absolute;
-                top: 36%;
-                left: 5%;
-                z-index: 270;
-                height: auto;
-            }
-            h3 {
-                font-size: 3em;
-                font-family: josefinRegular, Arial, Helvetica, sans-serf; 
-                color: #555;
-            }
-            .homePageTwoSubTitles {
-                
-            }
-            .homePageTwoH3One {
-                height: auto;
-                width: 100%;
-            }
-            :nth-child(3) div:nth-child(5) {
-                position: absolute;
-                z-index: 280;
-                height: auto;
-                left: 13%;
-                top: -2%;
-            }
-            .homePageTwoH3Two {
-                height: auto;
-                width: 100%;
-            }
-            :nth-child(3) div:nth-child(6) {
-                position: absolute;
-                z-index: 290;
-                width: 100%;
-                height: auto;
-                top: 18%;
-                left: 13%;
-            }
-            .homePageTwoH3Three {
-                height: auto;
-                width: 100%;
-            }
-            :nth-child(3) div:nth-child(7) {
-                position: absolute;
-                z-index: 300;
-                width: 100%;
-                height: auto;
-                top: 38%;
-                left: 13%;
-            }
+        height: 100vh;
+        width: 100%;
+        h2 {
+          font-family: $font-stack;
+          color: #555;
+          width: 100%;
+          height: auto;
+          display: block;
+          font-size: 6em;
+          opacity: 0;
+          transform: translateX(2000px);
+        }
+        :nth-child(1) {
+          position: relative;
+          height: 50vh;
+        }
+        :nth-child(1) div:nth-child(3) {
+          position: absolute;
+          left: 45%;
+          top: 45%;
+          z-index: 230;
+        }
+        .homePageTwoHexTriangle {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        :nth-child(1) div:nth-child(2) {
+          position: absolute;
+          top: 44%;
+          left: 32%;
+          z-index: 220;
+        }
+        .homePageTwoTitleBullet {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        :nth-child(1) div:nth-child(1) {
+          z-index: 210;
+          position: absolute;
+          top: 20%;
+          left: 5%;
+        }
+        .homePageAnimationSectionTwo {
+          position: relative;
+          float: left;
+          margin: -5% 0 0 35%;
+          width: 100%;
+          height: 100vh;
+        }
+        .homePageTwoBulletLines {
+          width: 100%;
+          height: auto;
+          display: block;
 
-        } // end sectionTwoAnimations
+        }
+        :nth-child(3) div:nth-child(1) {
+          position: absolute;
+          z-index: 240;
+          height: auto;
+        }
+        .homePageTwoSmallHeaderHexOne {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        :nth-child(3) div:nth-child(2) {
+          position: absolute;
+          display: block;
+          z-index: 250;
+          height: auto;
+          top: -4%;
+          left: 5%;
+        }
+        .homePageTwoSmallHeaderHexTwo {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        :nth-child(3) div:nth-child(3) {
+          position: absolute;
+          top: 16.5%;
+          left: 5%;
+          z-index: 260;
+          height: auto;
+        }
+        .homePageTwoSmallHeaderHexThree{
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        :nth-child(3) div:nth-child(4) {
+          position: absolute;
+          top: 36%;
+          left: 5%;
+          z-index: 270;
+          height: auto;
+        }
+        h3 {
+          font-size: 3em;
+          font-family: $font-stack;
+          color: #555;
+        }
+        .homePageTwoSubTitles {
+
+        }
+        .homePageTwoH3One {
+          height: auto;
+          width: 100%;
+        }
+        :nth-child(3) div:nth-child(5) {
+          position: absolute;
+          z-index: 280;
+          height: auto;
+          left: 13%;
+          top: -2%;
+        }
+        .homePageTwoH3Two {
+          height: auto;
+          width: 100%;
+        }
+        :nth-child(3) div:nth-child(6) {
+          position: absolute;
+          z-index: 290;
+          width: 100%;
+          height: auto;
+          top: 18%;
+          left: 13%;
+        }
+        .homePageTwoH3Three {
+          height: auto;
+          width: 100%;
+        }
+        :nth-child(3) div:nth-child(7) {
+          position: absolute;
+          z-index: 300;
+          width: 100%;
+          height: auto;
+          top: 38%;
+          left: 13%;
+        }
+
+      } // end sectionTwoAnimations
     } // end #sectionTwo
     #sectionThree {
-        position: relative;
-        .homePageThreeImgsDiv {
-            min-width: 100%;
-            flex-direction: column;
+      position: relative;
+      .homePageThreeImgsDiv {
+        min-width: 100%;
+        flex-direction: column;
+      }
+      h2 {
+        color: #fff;
+      }
+      // .fp-tableCell {
+      //     display: flex;
+      //     justify-content: space-around;
+      //     align-items: center;
+      // }
+      .displayFlexImgs {
+        display: flex;
+        justify-content: space-around;
+        margin: 2% auto;
+        // transform: translateX(-2000px);
+        img {
+          max-width: 100%;
+          height: auto;
         }
-        h2 {
-            color: #fff;
-        }
-        // .fp-tableCell {
-        //     display: flex;
-        //     justify-content: space-around;
-        //     align-items: center;
-        // }
-        .displayFlexImgs {
-            display: flex;
-            justify-content: space-around;
-            margin: 2% auto;
-            // transform: translateX(-2000px);
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-        .homePageFeaturedOne {
-           margin: 0 auto;
-           width: 100%;
-           transform: translateX(-2000px);
-        }
-        .homePageFeaturedTwo {
-           margin: 0 auto;
-           width: 100%;
-           transform: translateY(-3000px);
-        }
-        .homePageFeaturedThree {
-            margin: 0 auto;
-            width: 100%;
-            transform: translateX(-2000px);
-        }
+      }
+      .homePageFeaturedOne {
+        margin: 0 auto;
+        width: 100%;
+        transform: translateX(-2000px);
+      }
+      .homePageFeaturedTwo {
+        margin: 0 auto;
+        width: 100%;
+        transform: translateY(-3000px);
+      }
+      .homePageFeaturedThree {
+        margin: 0 auto;
+        width: 100%;
+        transform: translateX(-2000px);
+      }
     } // End sectionThree
     #sectionFour {
-        .flexParent {
-            flex-direction: column;
-            flex-wrap: wrap;
-            width: 100%;
-            div.displayFlex {
-                justify-content: space-around;
-                margin: .5em; 
-                .homePageFourImg {
-                    // margin: 2% auto; 
-                    img {
-                    width: 95%;
-                    height: auto;
-                    display: block;
-                    margin: 2%;
-                    }
-                }
+      .flexParent {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        div.displayFlex {
+          justify-content: space-around;
+          margin: .5em;
+          .homePageFourImg {
+            // margin: 2% auto; 
+            img {
+              width: 95%;
+              height: auto;
+              display: block;
+              margin: 2%;
             }
+          }
         }
+      }
     } // End #sectionFour 
-} // End visible 
+  } // End visible
