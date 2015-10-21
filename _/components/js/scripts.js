@@ -142,11 +142,11 @@ $(document).ready(function() {
 		}));
 	}; // End homePageTwoAnimations
 
-	//////////////////////////////////////Hidden Menu Area Functions
+	//////////////////////////////////////////////////////////Hidden Menu Area Functions
 	var menuButton = $('.menuButton');
 
 
-	////// Audio player
+	///////////////////////////////////////////////////////// Audio player
 	//var playAudio = function() {
 	//	var musicPlayerElement = document.createElement('audio');
 	//	var song = '_/audio/praiseYou.mp3';
@@ -188,17 +188,14 @@ $(document).ready(function() {
         var progress = (secs/track_length) * 100;
         $('.audioVideoBar').css({'width' : progress + '%'});
 
-        //console.log(track_length);
-        console.log(progress);
-
-        //var updateTime = function () {
-        //    console.log($('#songIdForPorgessBar'));
-        //    var thisPlayer = $(this);
-        //    var widthOfProgressBar = Math.floor((100 / this.duration) * this.currentTime);
-        //    $('#songIdForPorgessBar').css({'width': widthOfProgressBar + '%'});
     });
-
-
+    /// for the audio video menu animation to leave page
+    var audioVideoMenuButton = $('.audioVideoMenuButton'),
+        audioVideoControls = $('.audioVideoControls');
+    audioVideoMenuButton.on('click', function() {
+        audioVideoControls.slideToggle('slow');
+    });
+    // My OG functions not working out with page events
     //var pauseAudio = function(musicPlayerElement) {
 	//	// console.log(musicPlayerElement + 'this is inside the function');
     //
@@ -274,5 +271,37 @@ $(document).ready(function() {
 		// This is going to allow the page to scolling when menu close
 		$.fn.fullpage.setAllowScrolling(true);
 	});
+
+
+    // Menu animation for onclick rotating the span fa fa-rotate-45
+    var $menuButton = $('.main-header span.floatRight');
+    $('.main-header span.fa').on('click', function() {
+        menuClickEvent();
+    });
+    var menuClickEvent = function() {
+        if($menuButton.hasClass('clicked')) {
+            $('.main-header .open-menu span.fa').animate({  borderSpacing: 0 }, {
+                step: function(now, fx) {
+                    $(this).css('-webkit-transform','rotate('+now+'deg)');
+                    $(this).css('-moz-transform','rotate('+now+'deg)');
+                    $(this).css('transform','rotate('+now+'deg)');
+                },
+                duration:'fast'
+            },'linear');
+            //$disabilityCategoriesNavContent.stop().slideUp('slow');
+            $menuButton.removeClass('clicked');
+        } else {
+            $('.main-header .close-menu span.fa').animate({  borderSpacing: 45 }, {
+                step: function(now, fx) {
+                    $(this).css('-webkit-transform','rotate('+now+'deg)');
+                    $(this).css('-moz-transform','rotate('+now+'deg)');
+                    $(this).css('transform','rotate('+now+'deg)');
+                },
+                duration:'fast'
+            },'linear');
+            //$disabilityCategoriesNavContent.stop().slideDown('slow');
+            $menuButton.addClass('clicked');
+        }
+    };
 }); // End Ready
 

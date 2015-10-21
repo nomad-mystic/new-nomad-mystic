@@ -108,6 +108,10 @@ a {
   -webkit-transition: color .25s ease-in-out;
   transition: color .25s ease-in-out; }
 
+/*---------General Styles---*/
+.relativePosition {
+  position: relative; }
+
 /*---Start Nav functions--*/
 .main-header {
   /* background: linear-gradient(#3F94BF, #246485); */
@@ -277,6 +281,13 @@ a {
     background-color: #1384bb;
     height: 7px;
     width: 0; }
+  .homePageVisibleContent #sectionOne .audioVideoMenuButton {
+    width: 7%;
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    bottom: -3%;
+    z-index: 10; }
   .homePageVisibleContent #sectionTwo {
     position: relative;
     z-index: 200; }
@@ -326,7 +337,7 @@ a {
         float: left;
         margin: -5% 0 0 35%;
         width: 100%;
-        height: 100vh; }
+        height: 400px; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoBulletLines {
         width: 100%;
         height: auto;
@@ -344,16 +355,16 @@ a {
         display: block;
         z-index: 250;
         height: auto;
-        top: -4%;
-        left: 5%; }
+        top: -30px;
+        left: 60px; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexTwo {
         width: 100%;
         height: auto;
         display: block; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(3) div:nth-child(3) {
         position: absolute;
-        top: 16.5%;
-        left: 5%;
+        top: 145px;
+        left: 60px;
         z-index: 260;
         height: auto; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexThree {
@@ -362,8 +373,8 @@ a {
         display: block; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations :nth-child(3) div:nth-child(4) {
         position: absolute;
-        top: 36%;
-        left: 5%;
+        top: 320px;
+        left: 60px;
         z-index: 270;
         height: auto; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations h3 {
@@ -377,8 +388,8 @@ a {
         position: absolute;
         z-index: 280;
         height: auto;
-        left: 13%;
-        top: -2%; }
+        left: 150px;
+        top: -15px; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoH3Two {
         height: auto;
         width: 100%; }
@@ -387,8 +398,8 @@ a {
         z-index: 290;
         width: 100%;
         height: auto;
-        top: 18%;
-        left: 13%; }
+        top: 163px;
+        left: 150px; }
       .homePageVisibleContent #sectionTwo .sectionTwoAnimations .homePageTwoH3Three {
         height: auto;
         width: 100%; }
@@ -397,8 +408,8 @@ a {
         z-index: 300;
         width: 100%;
         height: auto;
-        top: 38%;
-        left: 13%; }
+        top: 340px;
+        left: 150px; }
   .homePageVisibleContent #sectionThree {
     position: relative; }
     .homePageVisibleContent #sectionThree .homePageThreeImgsDiv {
