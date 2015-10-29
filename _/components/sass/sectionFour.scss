@@ -1,0 +1,20 @@
+#sectionFour {
+  .flexParent {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    div.displayFlex {
+      justify-content: space-around;
+      margin: .5em;
+      .homePageFourImg {
+        // margin: 2% auto;
+        img {
+          width: 95%;
+          height: auto;
+          display: block;
+          margin: 2%;
+        }
+      }
+    }
+  }
+} // End #sectionFour

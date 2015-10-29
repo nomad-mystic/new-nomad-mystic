@@ -160,41 +160,63 @@ $(document).ready(function() {
 	//	return musicPlayerElement;
 	//}; // end play audio
 
-    var audioVideoPlayer = $('.audioVideoPlayer');
+    var audioPlayer = $('.audioPlayer');
 
     var counter = 0;
 
     $('.playButton').click(function(){
-        audioVideoPlayer[counter].play();
+        audioPlayer[counter].play();
 
     });
 
     $('.pauseButton').click(function(){
-        audioVideoPlayer[counter].pause();
+        audioPlayer[counter].pause();
 
     });
 
     $('.stopButton').click(function(){
-        audioVideoPlayer[counter].pause();
-        audioVideoPlayer[counter].currentTime = 0;
+        audioPlayer[counter].pause();
+        audioPlayer[counter].currentTime = 0;
 
     });
 
-    audioVideoPlayer.bind('timeupdate', function(){
+    audioPlayer.bind('timeupdate', function(){
 
         //Gets the whole duration of the track.
-        var track_length =  audioVideoPlayer[counter].duration;
-        var secs =  audioVideoPlayer[counter].currentTime;
+        var track_length =  audioPlayer[counter].duration;
+        var secs =  audioPlayer[counter].currentTime;
         var progress = (secs/track_length) * 100;
         $('.audioVideoBar').css({'width' : progress + '%'});
 
     });
     /// for the audio video menu animation to leave page
+
     var audioVideoMenuButton = $('.audioVideoMenuButton'),
         audioVideoControls = $('.audioVideoControls');
+
+    audioVideoControls.hide();
     audioVideoMenuButton.on('click', function() {
-        audioVideoControls.slideToggle('slow');
+        audioVideoControls.slideToggle('slow', function() {
+
+        });
+        audioVideoMenuButton.animate({
+           width: '5%'
+        });
     });
+
+    /// Stop and start the music and video scrollTop
+
+
+    $(window).on('mousewheel', function() {
+        var siteHref = window.location.href;
+        if('http://localhost:9001/#page2' === siteHref) {
+            audioPlayer[counter].pause();
+        } else if('http://localhost:9001/#page1' === siteHref){
+            audioPlayer[counter].play();
+        }
+
+    });
+
     // My OG functions not working out with page events
     //var pauseAudio = function(musicPlayerElement) {
 	//	// console.log(musicPlayerElement + 'this is inside the function');
@@ -274,13 +296,15 @@ $(document).ready(function() {
 
 
     // Menu animation for onclick rotating the span fa fa-rotate-45
-    var $menuButton = $('.main-header span.floatRight');
+    var $menuButton = $('.main-header span');
+    $('.hiddenContent').hide();
     $('.main-header span.fa').on('click', function() {
         menuClickEvent();
+        $('.hiddenContent').slideToggle('slow');
     });
     var menuClickEvent = function() {
         if($menuButton.hasClass('clicked')) {
-            $('.main-header .open-menu span.fa').animate({  borderSpacing: 0 }, {
+            $('.main-header .close-open span.fa').animate({  borderSpacing: 0 }, {
                 step: function(now, fx) {
                     $(this).css('-webkit-transform','rotate('+now+'deg)');
                     $(this).css('-moz-transform','rotate('+now+'deg)');
@@ -288,7 +312,17 @@ $(document).ready(function() {
                 },
                 duration:'fast'
             },'linear');
-            //$disabilityCategoriesNavContent.stop().slideUp('slow');
+
+            var siteHref = window.location.href;
+            console.log('$menuButton.hasClass(clicked)' + siteHref);
+
+            if('http://localhost:9001/#page1' === !siteHref) {
+                audioPlayer[counter].pause();
+
+            } else if('http://localhost:9001/#page1' === siteHref ) {
+                audioPlayer[counter].play();
+            }
+            audioVideoControls.slideToggle('slow');
             $menuButton.removeClass('clicked');
         } else {
             $('.main-header .close-menu span.fa').animate({  borderSpacing: 45 }, {
@@ -300,8 +334,12 @@ $(document).ready(function() {
                 duration:'fast'
             },'linear');
             //$disabilityCategoriesNavContent.stop().slideDown('slow');
+
+            var siteHref = window.location.href;
+            console.log('$menuButton.hasClass(unclicked)' + siteHref);
+            audioPlayer[counter].pause();
             $menuButton.addClass('clicked');
         }
-    };
+    }; // end menuClickEvent
 }); // End Ready
 

@@ -1,0 +1,97 @@
+/*---Start Nav functions--*/
+
+.main-header {
+  /* background: linear-gradient(#3F94BF, #246485); */
+  padding: 5px;
+  text-align: center;
+  color: white;
+  text-shadow: #222 0px -1px 1px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  transition: all 1s ease;
+  z-index:  100;
+  a {
+    position: absolute;
+    left: 95%;
+    top: 20px;
+    color: white;
+    font-size: 32px;
+  }
+}
+
+.page-wrap {
+  float: right;
+  width: 100%;
+  transition: width 1s ease;
+}
+
+.hiddenContent {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #353535;
+  overflow-y: auto;
+  transition: width 1s ease;
+  z-index: 99;
+  a {
+    display: block;
+    color: white;
+    padding: 1em;
+    &:hover, &:focus {
+
+    }
+  }
+  .displayFlex > div {
+    width: 30%;
+    margin: 2% auto;
+    display: block;
+    position: relative;
+  }
+  :last-child {
+    margin: 0 5% 0 0;
+  }
+  .icon {
+    display: block;
+    margin: 0 auto;
+  }
+  .portfolioMenuIconTwo {
+    position: absolute;
+    left: 28%;
+    top: 0;
+  }
+  h2 {
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    margin: 2%;
+  }
+  p {
+    color: white;
+    padding: 4%;
+    font-size: 1.25em;
+  }
+} // end hiddenContent
+
+
+.close-menu {
+  display: none;
+}
+
+#hiddenContent:target {
+  width: 100%;
+}
+#hiddenContent:target + .page-wrap {
+  width: 100%;
+  .open-menu {
+    display: none;
+  }
+  .close-menu {
+    display: block;
+  }
+  .main-header {
+    width: 80%;
+    left: 20%;
+  }
+}

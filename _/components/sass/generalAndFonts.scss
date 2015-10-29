@@ -1,0 +1,46 @@
+// General Styles
+* {
+  box-sizing: border-box;
+}
+
+html, body { min-height: 100%; }
+a { text-decoration: none; }
+
+.displayFlex {
+  display: flex;
+}
+.floatLeft {
+  float: left;
+}
+.clearBoth {
+  clear: both;
+}
+.menuButton  {
+  display: block;
+  padding: 1em;
+  text-align: center;
+
+}
+/*------start Fonts----*/
+@font-face {
+  font-family: josefinRegular;
+  src: url('../_/fonts/josefin_regular.ttf');
+}
+@font-face {
+  font-family: josefinBold;
+  src: url('../_/fonts/josefin_bold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: fontawesome;
+  src: url('../_/css/font-awesome.min.css');
+}
+$font-stack: josefinRegular, Arial, Helvetica, sans-serf;
+/*---------font-awesome----*/
+.audioVideoControls {
+
+}
+/*---------General Styles---*/
+.relativePosition {
+  position: relative;
+}
