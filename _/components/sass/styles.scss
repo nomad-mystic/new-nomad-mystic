@@ -8,73 +8,74 @@ last Mod = 9-15-2015
 
 /*----import SCSS files----*/
 @import 'reset';
+//@import "compass/css3";
 @import 'generalAndFonts';
 @import 'menu';
 @import 'sectionOne';
 @import 'sectionTwo';
 @import 'sectionThree';
 
-// This is for the site menu 
-@import "compass/css3";
+// This is for the site menu
 
 
 
-  /*-------button flipper styles----*/
-  /* entire container, keeps perspective */
-  .flip-container {
-    perspective: 1000;
-    p {
-      text-align: center;
-    }
-  }
-  /* flip the pane when hovered */
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
-    transform: rotateX(-180deg);
-  }
 
-  .flip-container, .front, .back {
-    width: 100%;
-  }
-
-  /* flip speed goes here */
-  .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-    transform-origin: 100% 50%;
-  }
-
-  /* hide back of pane during swap */
-  .front, .back {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: solid #fff 1px;
-  }
-
-  /* front pane, placed above back */
-  .front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateX(0deg);
-  }
-
-  /* back, initially hidden pane */
-  .back {
-    transform: rotateX(180deg);
-  }
+  ///*-------button flipper styles----*/
+  ///* entire container, keeps perspective */
+  //.flip-container {
+  //  perspective: 1000;
+  //  p {
+  //    text-align: center;
+  //  }
+  //}
+  ///* flip the pane when hovered */
+  //.flip-container:hover .flipper, .flip-container.hover .flipper {
+  //  transform: rotateX(-180deg);
+  //}
+  //
+  //.flip-container, .front, .back {
+  //  width: 100%;
+  //}
+  //
+  ///* flip speed goes here */
+  //.flipper {
+  //  transition: 0.6s;
+  //  transform-style: preserve-3d;
+  //  position: relative;
+  //  transform-origin: 100% 50%;
+  //}
+  //
+  ///* hide back of pane during swap */
+  //.front, .back {
+  //  backface-visibility: hidden;
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  border: solid #fff 1px;
+  //}
+  //
+  ///* front pane, placed above back */
+  //.front {
+  //  z-index: 2;
+  //  /* for firefox 31 */
+  //  transform: rotateX(0deg);
+  //}
+  //
+  ///* back, initially hidden pane */
+  //.back {
+  //  transform: rotateX(180deg);
+  //}
   /*-------end flippers Styles---*/
-  // This the visible home page content 
-  .homePageVisibleContent {
-    padding: 0;
-    h2 {
-      font-size: 2em;
-      margin: 2% auto;
-      text-align: center;
-    }
-
-
-
-
-  } // End visible
+  // This the visible home page content
+  //.homePageVisibleContent {
+  //  padding: 0;
+  //  h2 {
+  //    font-size: 2em;
+  //    margin: 2% auto;
+  //    text-align: center;
+  //  }
+  //
+  //
+  //
+  //
+  //} // End visible

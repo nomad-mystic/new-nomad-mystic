@@ -239,6 +239,8 @@ $(document).ready(function() {
 	//});
 
 /// Ful Page Functions for the homePage
+    // Changes the landing url to #page1
+
 	$('#fullpage').fullpage({
 		anchors: ['page1', 'page2', 'featuredWorks', 'page4', 'page5'],
 		sectionsColor: ['#000', 'orange', '#000', '#ADD8E6', '#222'],
@@ -262,8 +264,7 @@ $(document).ready(function() {
 
             //using index
             if(index == 1) {
-            	// musicPlayerElement =
-            	// playAudio();
+                $.fn.fullpage.setAutoScrolling(true);
 
            	} // end if
             if(index == 2){
@@ -276,12 +277,16 @@ $(document).ready(function() {
             // return musicPlayerElement;
         }, // end afterLoad
         onLeave: function(index, nextIndex, direction){
-        	 if(index == 1) {
-
-            } // end if
+            console.log(index);
+        	 if(index == 1 && direction == 'down') {
+                 $.fn.fullpage.setAutoScrolling(false);
+            } else if(direction == 'up' && nextIndex == 1) {
+                $.fn.fullpage.setAutoScrolling(true);
+            }
         }
 	});
-	$.fn.fullpage.setAutoScrolling(true);
+    $.fn.fullpage.setAutoScrolling(false);
+	//$.fn.fullpage.setAutoScrolling(true);
 	// console.log(musicPlayerElement + " this is outside of the function");
 
 	// tHis is going to be the functions that stop the page from scrolling and stop animations when menu is open
@@ -300,19 +305,19 @@ $(document).ready(function() {
     $('.hiddenContent').hide();
     $('.main-header span.fa').on('click', function() {
         menuClickEvent();
-        $('.hiddenContent').slideToggle('slow');
+        $('.hiddenContent').slideToggle('slow', 'easeInOutCirc');
     });
     var menuClickEvent = function() {
         if($menuButton.hasClass('clicked')) {
-            $('.main-header .close-open span.fa').animate({  borderSpacing: 0 }, {
-                step: function(now, fx) {
-                    $(this).css('-webkit-transform','rotate('+now+'deg)');
-                    $(this).css('-moz-transform','rotate('+now+'deg)');
-                    $(this).css('transform','rotate('+now+'deg)');
-                },
-                duration:'fast'
-            },'linear');
-
+            //$('.main-header .close-open span.fa').animate({  borderSpacing: 0 }, {
+            //    step: function(now, fx) {
+            //        $(this).css('-webkit-transform','rotate('+now+'deg)');
+            //        $(this).css('-moz-transform','rotate('+now+'deg)');
+            //        $(this).css('transform','rotate('+now+'deg)');
+            //    },
+            //    duration:'fast'
+            //},'linear');
+            $('.main-header .close-open span.fa').fadeOut('slow');
             var siteHref = window.location.href;
             console.log('$menuButton.hasClass(clicked)' + siteHref);
 
@@ -334,7 +339,7 @@ $(document).ready(function() {
                 duration:'fast'
             },'linear');
             //$disabilityCategoriesNavContent.stop().slideDown('slow');
-
+            $('.main-header .close-open span.fa').fadeOut('slow');
             var siteHref = window.location.href;
             console.log('$menuButton.hasClass(unclicked)' + siteHref);
             audioPlayer[counter].pause();

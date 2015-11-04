@@ -35,22 +35,57 @@
   overflow-y: auto;
   transition: width 1s ease;
   z-index: 99;
+  h3 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    text-align: center;
+  }
+  h3:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  h3:hover:after {
+    width: 20%;
+    background: #009E8E;
+  }
   a {
+    font-family: 'Source Code Pro';
+    font-weight: bold;
     display: block;
     color: white;
-    padding: 1em;
+    font-size: 3em;
+    transition: all .5s ease;
+    line-height: 1.5em;
     &:hover, &:focus {
+      color: #009E8E;
 
     }
   }
-  .displayFlex > div {
-    width: 30%;
-    margin: 2% auto;
-    display: block;
-    position: relative;
+  .displayFlex {
+    flex-direction: column;
   }
-  :last-child {
-    margin: 0 5% 0 0;
+  .displayFlex > div {
+    width: 90%;
+    margin: 5% auto 1%;
+    text-align: center;
+    line-height: 0;
+  }
+  .HiddenSocial {
+    text-align: center;
+    hr {
+      width: 50%;
+    }
+    a {
+      font-size: 3em;
+      display: inline-block;
+      margin: 0 1%;
+    }
   }
   .icon {
     display: block;
