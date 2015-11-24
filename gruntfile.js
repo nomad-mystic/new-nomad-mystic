@@ -27,7 +27,8 @@
 		// },//end uglify
 		jshint: {
 			files: [    'gruntfile.js', 
-					    '_/components/js/*.js'
+					    '_/components/js/*.js',
+						'_/components/js/chartScripts.js'
 			],
 			options: {
 				globals: {
@@ -53,10 +54,12 @@
 		},// end autoperfixer
 		watch: {
 			options: { livereload: true},
-			// scripts: {
-			// 	files: ['gruntfile.js', '_/components/js/*.js'] //,
-			// 	tasks: ['jshint']
-			// },//end scripts
+			 scripts: {
+			 	files: ['gruntfile.js', '_/components/js/*.js',
+						'_/components/js/chartScripts.js'
+				],
+			 	tasks: ['jshint']
+			 },//end scripts
 			sass: {
 				files: ['_/components/sass/*.scss'],
 				tasks: ['compass:dev']

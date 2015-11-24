@@ -9,57 +9,6 @@ $(document).ready(function() {
     // This is going to test pushing to github master 10_16_2015
 	///////////////////////////////////////// SectionThree
 	/// Hover events
-
-	// Eilixr
-	$('.homePageFeaturedOne').mouseover(function() {
-
-		TweenMax.to('.homePageFeaturedOne', 1, {
-			x: 50,
-			ease: Power1.easeOut,
-			zIndex: 10
-		});
-		TweenMax.to('.homePageFeaturedTwo , .homePageFeaturedThree', 1, {
-			padding: '2%',
-			opacity: 0.5
-		});
-
-	}).mouseleave(function() {
-		TweenMax.to('.homePageFeaturedOne', 2, {
-			x: 0,
-			ease: Power1.easeOut,
-			zIndex: 0
-		});
-		TweenMax.to('.homePageFeaturedTwo , .homePageFeaturedThree ', 1, {
-			padding: '0%',
-			opacity: 1
-		});
-		$(this).css('margin-left', 'auto').delay(2000);
-	});
-	// Space Project
-	$('.homePageFeaturedTwo').mouseover(function() {
-
-		TweenMax.to('.homePageFeaturedTwo', 1, {
-			y: '-50',
-			ease: Power1.easeOut,
-			zIndex: 10
-		});
-		TweenMax.to('.homePageFeaturedOne , .homePageFeaturedThree', 1, {
-			padding: '2%',
-			opacity: 0.5
-		});
-
-	}).mouseleave(function() {
-		TweenMax.to('.homePageFeaturedTwo', 2, {
-			y: 0,
-			ease: Power1.easeOut,
-			zIndex: 0
-		});
-		TweenMax.to('.homePageFeaturedOne , .homePageFeaturedThree ', 1, {
-			padding: '0%',
-			opacity: 1
-		});
-		$(this).css('margin-left', 'auto').delay(2000);
-	});
 	// THis is Hex desgin project
 	$('.homePageFeaturedThree').mouseover(function() {
 
@@ -91,21 +40,16 @@ $(document).ready(function() {
 	var homePageThreeAnimations = function() {
 		var homePageFeaturedOne = $('.homePageFeaturedOne'),
 			homePageFeaturedTwo = $('.homePageFeaturedTwo'),
-			homePageFeaturedThree = $('.homePageFeaturedThree'),
-			homePageSectionThreeImgs = $('#sectionThree .displayFlex');
-			//[homePageFeaturedOne, homePageFeaturedTwo,homePageFeaturedThree]
-		// TweenMax.set(homePageSectionThreeImgs, {x: -2000});
+			homePageFeaturedThree = $('.homePageFeaturedThree');
+
 		TweenMax.to(homePageFeaturedOne, 2, {
-			x: 0,
-			ease: Power2.easeInOut
+
 		});
 		TweenMax.to(homePageFeaturedTwo, 5, {
-			y: 0,
-			ease: Power4.easeOut
+
 		});
 		TweenMax.to(homePageFeaturedThree, 3, {
-			x: 0,
-			ease: Power4.easeOut
+
 		});
 	}; // End homePageThreeAnimations
 	///////////////////////////// afterLoad FullPage animations
@@ -123,150 +67,103 @@ $(document).ready(function() {
 		// },{
 
 		// });
-		var homePageTwoTL = new TimelineMax();
+            var homePageTwoTL = new TimelineMax();
 
-		homePageTwoTL.add(TweenMax.to(homePageTwoHexTriangle, 1, {
-			rotation: 360,
-			ease: Power2.easeOut
- 		}));
+        homePageTwoTL.add(TweenMax.to(homePageTwoHexTriangle, 1, {
+            rotation: 360,
+            ease: Power2.easeOut
+        }));
 
-		homePageTwoTL.add(TweenMax.to(homePageTwoTitleBullet, 1, {
-			rotation: 180,
-			ease: Power2.easeOut
-		}));
+        homePageTwoTL.add(TweenMax.to(homePageTwoTitleBullet, 1, {
+            rotation: 180,
+            ease: Power2.easeOut
+        }));
 
-		homePageTwoTL.add(TweenMax.to(sectionTwoHeaderTwo, 2, {
-			x: 0,
-			opacity: 1,
+        homePageTwoTL.add(TweenMax.to(sectionTwoHeaderTwo, 2, {
+            x: 0,
+            opacity: 1,
 			ease: Power2.easeOut
 		}));
 	}; // End homePageTwoAnimations
 
 	//////////////////////////////////////////////////////////Hidden Menu Area Functions
-	var menuButton = $('.menuButton');
+
 
 
 	///////////////////////////////////////////////////////// Audio player
-	//var playAudio = function() {
-	//	var musicPlayerElement = document.createElement('audio');
-	//	var song = '_/audio/praiseYou.mp3';
-    //
-	//	document.body.appendChild(musicPlayerElement);
-	//	musicPlayerElement.id = 'musicPlayer';
-	//	musicPlayerElement.src = song;
-    //
-	//	musicPlayerElement.play();
-    //
-	//	return musicPlayerElement;
-	//}; // end play audio
-
     var audioPlayer = $('.audioPlayer');
-
     var counter = 0;
 
     $('.playButton').click(function(){
         audioPlayer[counter].play();
 
     });
-
     $('.pauseButton').click(function(){
         audioPlayer[counter].pause();
 
     });
-
     $('.stopButton').click(function(){
         audioPlayer[counter].pause();
         audioPlayer[counter].currentTime = 0;
 
     });
-
     audioPlayer.bind('timeupdate', function(){
-
         //Gets the whole duration of the track.
         var track_length =  audioPlayer[counter].duration;
         var secs =  audioPlayer[counter].currentTime;
         var progress = (secs/track_length) * 100;
+
         $('.audioVideoBar').css({'width' : progress + '%'});
 
     });
     /// for the audio video menu animation to leave page
-
     var audioVideoMenuButton = $('.audioVideoMenuButton'),
         audioVideoControls = $('.audioVideoControls');
 
     audioVideoControls.hide();
     audioVideoMenuButton.on('click', function() {
-        audioVideoControls.slideToggle('slow', function() {
-
-        });
-        audioVideoMenuButton.animate({
-           width: '5%'
-        });
-    });
+        audioVideoControls.slideToggle('slow', function(){});
+    }); // End audioVideoMenuButton
 
     /// Stop and start the music and video scrollTop
-
-
-    $(window).on('mousewheel', function() {
+    $(window).on('scroll', function() {
         var siteHref = window.location.href;
+        console.log(siteHref);
         if('http://localhost:9001/#page2' === siteHref) {
             audioPlayer[counter].pause();
+
         } else if('http://localhost:9001/#page1' === siteHref){
             audioPlayer[counter].play();
         }
-
     });
-
-    // My OG functions not working out with page events
-    //var pauseAudio = function(musicPlayerElement) {
-	//	// console.log(musicPlayerElement + 'this is inside the function');
-    //
-	//	// musicPlayerElement.pause();
-	//};
-	//var locationOfPage = location.hash;
-
-	//if(locationOfPage === '#page1') {
-	//	playAudio();
-	//	// console.log(musicPlayerElement + 'this is inside the function');
-	//}
-	//$(window).on('hashchange', function(evnt) {
-	//	console.log(evnt);
-	//	if(!locationOfPage) {
-	//		$('#musicPlayer').trigger('pause');
-	//	} else {
-	//		$('#musicPlayer').trigger('play');
-	//	}
-	//});
-
 /// Ful Page Functions for the homePage
     // Changes the landing url to #page1
 
 	$('#fullpage').fullpage({
 		anchors: ['page1', 'page2', 'featuredWorks', 'page4', 'page5'],
-		sectionsColor: ['#000', 'orange', '#000', '#ADD8E6', '#222'],
+		sectionsColor: ['#000', 'orange', 'rgba(0, 0, 0, 0.62)', '#000000', '#222'],
 		loopHorizontal: false,
 		resize: true,
 		// Styles
 		css3: true,
 		easing: 'easeInOutCubic',
-        easingcss3: 'ease',
-        fitToSection: true,
+        //easingcss3: 'ease',
+        //fitToSection: true,
         //Accessibility
         keyboardScrolling: true,
         animateAnchor: true,
         recordHistory: true,
         // Navigation
-        navigation: true,
+        navigation: true ,
         // Functions
 
         afterLoad: function(anchorLink, index){
             var loadedSection = $(this);
-
-            //using index
+			//using index
             if(index == 1) {
-                $.fn.fullpage.setAutoScrolling(true);
+                //$.fn.fullpage.setAutoScrolling(true);
 
-           	} // end if
+            } // end if
             if(index == 2){
                homePageTwoAnimations();
             } // end if
@@ -274,77 +171,103 @@ $(document).ready(function() {
             	homePageThreeAnimations();
             } // end if
 
-            // return musicPlayerElement;
-        }, // end afterLoad
+        }, //, // end afterLoad
         onLeave: function(index, nextIndex, direction){
-            console.log(index);
-        	 if(index == 1 && direction == 'down') {
-                 $.fn.fullpage.setAutoScrolling(false);
-            } else if(direction == 'up' && nextIndex == 1) {
-                $.fn.fullpage.setAutoScrolling(true);
-            }
+
+            //if(index == 1 && direction == 'down') {
+            //     $.fn.fullpage.setAutoScrolling(false);
+            //} else if(direction == 'up' && nextIndex == 1) {
+            //    $.fn.fullpage.setAutoScrolling(true);
+            //}
         }
 	});
     $.fn.fullpage.setAutoScrolling(false);
-	//$.fn.fullpage.setAutoScrolling(true);
-	// console.log(musicPlayerElement + " this is outside of the function");
+	$.fn.fullpage.setFitToSection(false);
 
+
+    var $closeMenuButton = $('.close-menu');
+    var $openMenuButton = $('.open-menu');
+    var $menuButton = $('.main-header span.fa');
 	// tHis is going to be the functions that stop the page from scrolling and stop animations when menu is open
-	$('.open-menu').on('click', function() {
+    $openMenuButton.on('click', function() {
 		// This is going to stop the page from scolling when menu opened
 		$.fn.fullpage.setAllowScrolling(false);
 	});
-	$('.close-menu').on('click', function() {
+    $closeMenuButton.on('click', function() {
 		// This is going to allow the page to scolling when menu close
 		$.fn.fullpage.setAllowScrolling(true);
 	});
 
 
     // Menu animation for onclick rotating the span fa fa-rotate-45
-    var $menuButton = $('.main-header span');
+
+
     $('.hiddenContent').hide();
-    $('.main-header span.fa').on('click', function() {
+    $menuButton.on('click', function() {
         menuClickEvent();
-        $('.hiddenContent').slideToggle('slow', 'easeInOutCirc');
+        $('.hiddenContent').slideToggle('slow');
     });
     var menuClickEvent = function() {
-        if($menuButton.hasClass('clicked')) {
-            //$('.main-header .close-open span.fa').animate({  borderSpacing: 0 }, {
-            //    step: function(now, fx) {
-            //        $(this).css('-webkit-transform','rotate('+now+'deg)');
-            //        $(this).css('-moz-transform','rotate('+now+'deg)');
-            //        $(this).css('transform','rotate('+now+'deg)');
-            //    },
-            //    duration:'fast'
-            //},'linear');
-            $('.main-header .close-open span.fa').fadeOut('slow');
-            var siteHref = window.location.href;
-            console.log('$menuButton.hasClass(clicked)' + siteHref);
+        if ($openMenuButton.hasClass('clicked')) {
 
-            if('http://localhost:9001/#page1' === !siteHref) {
-                audioPlayer[counter].pause();
 
-            } else if('http://localhost:9001/#page1' === siteHref ) {
-                audioPlayer[counter].play();
-            }
-            audioVideoControls.slideToggle('slow');
-            $menuButton.removeClass('clicked');
-        } else {
-            $('.main-header .close-menu span.fa').animate({  borderSpacing: 45 }, {
+            $closeMenuButton.fadeOut('fast');
+            $openMenuButton.fadeIn('fast');
+            $openMenuButton.removeClass('clicked');
+            $('.close-menu').animate({  borderSpacing: 0 }, {
                 step: function(now, fx) {
                     $(this).css('-webkit-transform','rotate('+now+'deg)');
                     $(this).css('-moz-transform','rotate('+now+'deg)');
                     $(this).css('transform','rotate('+now+'deg)');
                 },
-                duration:'fast'
+                duration: 1000
             },'linear');
-            //$disabilityCategoriesNavContent.stop().slideDown('slow');
-            $('.main-header .close-open span.fa').fadeOut('slow');
-            var siteHref = window.location.href;
-            console.log('$menuButton.hasClass(unclicked)' + siteHref);
+
             audioPlayer[counter].pause();
-            $menuButton.addClass('clicked');
+
+        } else {
+            $openMenuButton.fadeOut('fast');
+            $closeMenuButton.removeClass('.close-menu');
+            $openMenuButton.addClass('clicked');
+            $closeMenuButton.fadeIn('fast').animate({  borderSpacing: 45 }, {
+                step: function(now, fx) {
+                    $(this).css('-webkit-transform','rotate('+now+'deg)');
+                    $(this).css('-moz-transform','rotate('+now+'deg)');
+                    $(this).css('transform','rotate('+now+'deg)');
+                },
+                duration: 200
+            },'linear');
+
+            audioPlayer[counter].pause();
+            if (audioVideoControls.css({'display': 'none'})){
+                audioVideoControls.slideToggle('slow');
+            }
         }
     }; // end menuClickEvent
+
+
+
+    ///Feature Works Section
+    // This adds hover effect to the overlay div to manipulate the opacity of the overlay
+    var $homeFeaturedOne = $('.homeFeaturedOne');
+    var $homeFeaturedTwo = $('.homeFeaturedTwo');
+    var $homeFeaturedThree = $('.homeFeaturedThree');
+
+    $homeFeaturedOne.hover(overlayHoverOn, overlayHoverOff);
+    $homeFeaturedTwo.hover(overlayHoverOn, overlayHoverOff);
+    $homeFeaturedThree.hover(overlayHoverOn, overlayHoverOff);
+
+    function overlayHoverOn(ev) {
+        var target = $(ev.target);
+        target.animate({
+            opacity: 1
+        }, 200);
+    }
+    function overlayHoverOff(ev) {
+        var target = $(ev.target);
+        target.animate({
+            opacity: 0
+        }, 200);
+    }
 }); // End Ready
 

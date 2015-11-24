@@ -40,6 +40,7 @@
     position: relative;
     padding-bottom: 3px;
     text-align: center;
+    margin: 0 auto;
   }
   h3:after {
     content: '';
@@ -51,7 +52,7 @@
     transition: width .5s ease, background-color .5s ease;
   }
   h3:hover:after {
-    width: 20%;
+    width: 100%;
     background: #009E8E;
   }
   a {
@@ -109,24 +110,6 @@
   }
 } // end hiddenContent
 
-
 .close-menu {
   display: none;
-}
-
-#hiddenContent:target {
-  width: 100%;
-}
-#hiddenContent:target + .page-wrap {
-  width: 100%;
-  .open-menu {
-    display: none;
-  }
-  .close-menu {
-    display: block;
-  }
-  .main-header {
-    width: 80%;
-    left: 20%;
-  }
 }

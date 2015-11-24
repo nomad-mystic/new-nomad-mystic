@@ -1,3 +1,6 @@
+
+@import "generalAndFonts.scss";
+
 #sectionThree {
   position: relative;
   .homePageThreeImgsDiv {
@@ -5,36 +8,102 @@
     flex-direction: column;
   }
   h2 {
+    margin: 5% auto 2%;
+    color: #fff;
+    text-align: center;
+    font-size: 3em;
+    font-family: $font-stack;
+  }
+  h3 {
+    font-size: 2em;
     color: #fff;
   }
+  p {
+    font-size: 1.25em;
+    color: #fff;
+  }
+  img {
+    width: 100%;
+  }
+  .container-fluid {
+    margin-top: 5%;
+  }
+  .seventyFivePercentWidth {
+    margin: 10% auto;
+  }
+  .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  .overlay1,
+  .overlay2,
+  .overlay3 {
+    background: rgba(0,0,0,0.5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 998;
+    opacity: 0;
+  }
+  .homeFeaturedOne {
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .homeFeaturedTwo {
+    z-index: 1000;
+    cursor: pointer;
+  }
+  .homeFeaturedThree {
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // .fp-tableCell {
   //     display: flex;
   //     justify-content: space-around;
   //     align-items: center;
   // }
-  .displayFlexImgs {
-    display: flex;
-    justify-content: space-around;
-    margin: 2% auto;
-    // transform: translateX(-2000px);
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  .homePageFeaturedOne {
-    margin: 0 auto;
-    width: 100%;
-    transform: translateX(-2000px);
-  }
-  .homePageFeaturedTwo {
-    margin: 0 auto;
-    width: 100%;
-    transform: translateY(-3000px);
-  }
-  .homePageFeaturedThree {
-    margin: 0 auto;
-    width: 100%;
-    transform: translateX(-2000px);
-  }
+  //.displayFlexImgs {
+  //  display: flex;
+  //  justify-content: space-around;
+  //  margin: 2% auto;
+  //  // transform: translateX(-2000px);
+  //  img {
+  //    max-width: 100%;
+  //    height: auto;
+  //  }
+  //}
+  //.homePageFeaturedOne {
+  //  margin: 0 auto;
+  //  width: 100%;
+  //  transform: translateX(-2000px);
+  //}
+  //.homePageFeaturedTwo {
+  //  margin: 0 auto;
+  //  width: 100%;
+  //  transform: translateY(-3000px);
+  //}
+  //.homePageFeaturedThree {
+  //  margin: 0 auto;
+  //  width: 100%;
+  //  transform: translateX(-2000px);
+  //}
 } // End sectionThree
