@@ -53,38 +53,38 @@ $(document).ready(function() {
 		});
 	}; // End homePageThreeAnimations
 	///////////////////////////// afterLoad FullPage animations
-	var homePageTwoAnimations = function() {
-		var homePageTwoHexTriangle = $('.homePageTwoHexTriangle'),
-			homePageTwoTitleBullet = $('.homePageTwoTitleBullet'),
-			homePageTwoBulletLines = $('.homePageTwoBulletLines'),
-			homePageTwoSmallHeaderHexOne = $('.homePageTwoSmallHeaderHexOne'),
-			homePageTwoSmallHeaderHexTwo = $('.homePageTwoSmallHeaderHexTwo'),
-			homePageTwoSmallHeaderHexThree = $('.homePageTwoSmallHeaderHexThree'),
-			sectionTwoHeaderTwo = $('.sectionTwoAnimations h2');
-
-		// TweenMax.fromTo(homePageTwoHexTriangle, 3, {
-
-		// },{
-
-		// });
-            var homePageTwoTL = new TimelineMax();
-
-        homePageTwoTL.add(TweenMax.to(homePageTwoHexTriangle, 1, {
-            rotation: 360,
-            ease: Power2.easeOut
-        }));
-
-        homePageTwoTL.add(TweenMax.to(homePageTwoTitleBullet, 1, {
-            rotation: 180,
-            ease: Power2.easeOut
-        }));
-
-        homePageTwoTL.add(TweenMax.to(sectionTwoHeaderTwo, 2, {
-            x: 0,
-            opacity: 1,
-			ease: Power2.easeOut
-		}));
-	}; // End homePageTwoAnimations
+	//var homePageTwoAnimations = function() {
+	//	var homePageTwoHexTriangle = $('.homePageTwoHexTriangle'),
+	//		homePageTwoTitleBullet = $('.homePageTwoTitleBullet'),
+	//		homePageTwoBulletLines = $('.homePageTwoBulletLines'),
+	//		homePageTwoSmallHeaderHexOne = $('.homePageTwoSmallHeaderHexOne'),
+	//		homePageTwoSmallHeaderHexTwo = $('.homePageTwoSmallHeaderHexTwo'),
+	//		homePageTwoSmallHeaderHexThree = $('.homePageTwoSmallHeaderHexThree'),
+	//		sectionTwoHeaderTwo = $('.sectionTwoAnimations h2');
+    //
+	//	// TweenMax.fromTo(homePageTwoHexTriangle, 3, {
+    //
+	//	// },{
+    //
+	//	// });
+     //       var homePageTwoTL = new TimelineMax();
+    //
+     //   homePageTwoTL.add(TweenMax.to(homePageTwoHexTriangle, 1, {
+     //       rotation: 360,
+     //       ease: Power2.easeOut
+     //   }));
+    //
+     //   homePageTwoTL.add(TweenMax.to(homePageTwoTitleBullet, 1, {
+     //       rotation: 180,
+     //       ease: Power2.easeOut
+     //   }));
+    //
+     //   homePageTwoTL.add(TweenMax.to(sectionTwoHeaderTwo, 2, {
+     //       x: 0,
+     //       opacity: 1,
+	//		ease: Power2.easeOut
+	//	}));
+	//}; // End homePageTwoAnimations
 
 	//////////////////////////////////////////////////////////Hidden Menu Area Functions
 
@@ -128,7 +128,6 @@ $(document).ready(function() {
     /// Stop and start the music and video scrollTop
     $(window).on('scroll', function() {
         var siteHref = window.location.href;
-        console.log(siteHref);
         if('http://localhost:9001/#page2' === siteHref) {
             audioPlayer[counter].pause();
 
@@ -147,8 +146,6 @@ $(document).ready(function() {
 		// Styles
 		css3: true,
 		easing: 'easeInOutCubic',
-        //easingcss3: 'ease',
-        //fitToSection: true,
         //Accessibility
         keyboardScrolling: true,
         animateAnchor: true,
@@ -156,7 +153,6 @@ $(document).ready(function() {
         // Navigation
         navigation: true ,
         // Functions
-
         afterLoad: function(anchorLink, index){
             var loadedSection = $(this);
 			//using index
@@ -165,7 +161,7 @@ $(document).ready(function() {
 
             } // end if
             if(index == 2){
-               homePageTwoAnimations();
+               //homePageTwoAnimations();
             } // end if
             if (index == 3) {
             	homePageThreeAnimations();
@@ -207,9 +203,9 @@ $(document).ready(function() {
         menuClickEvent();
         $('.hiddenContent').slideToggle('slow');
     });
+
     var menuClickEvent = function() {
         if ($openMenuButton.hasClass('clicked')) {
-
 
             $closeMenuButton.fadeOut('fast');
             $openMenuButton.fadeIn('fast');
@@ -245,6 +241,38 @@ $(document).ready(function() {
         }
     }; // end menuClickEvent
 
+    /// homePageSectionTwo
+    //THis is from css-trick for scaling divs and their content in side
+    var $sectionTwo = $('#sectionTwo'); // this is the wrapper
+    var $sectionTwoAnimations = $('.sectionTwoAnimations'); /// content inside
+    var $sectionHeight = $sectionTwoAnimations.outerHeight();
+    var $sectionWidth = $sectionTwoAnimations.outerWidth();
+
+    $sectionTwo.resizable({
+        resize: resize
+    });
+
+    function resize(event, ui) {
+        var $scale, $origin;
+
+        $scale = Math.min(
+            ui.size.width / $sectionWidth,
+            ui.size.height / $sectionHeight
+        );
+
+        $sectionTwoAnimations.css({
+           transform: 'scale(' + $scale + ')'
+        });
+    } // End resize
+
+    var startingPoint = {
+      size: {
+          width: $sectionTwo.width(),
+          height: $sectionTwo.height()
+      }
+    };
+
+    resize(null, startingPoint);
 
 
     ///Feature Works Section

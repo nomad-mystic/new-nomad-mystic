@@ -1,7 +1,7 @@
 {
   "name": "newNomadMystic",
   "version": "1.0.0",
-  "description": "This is going to be where I experimant with SVG and Javascript ",
+  "description": "This is going to be where I experimant with SVG and Javascript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

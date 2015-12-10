@@ -111,12 +111,14 @@ a:hover {
   -webkit-transition: all 1s ease;
           transition: all 1s ease;
   z-index: 100; }
-  .main-header a {
+  .main-header div.close-menu,
+  .main-header div.open-menu {
     position: absolute;
     left: 95%;
     top: 20px;
     color: white;
-    font-size: 32px; }
+    font-size: 32px;
+    cursor: pointer; }
 
 .page-wrap {
   float: right;
@@ -275,45 +277,45 @@ a:hover {
     position: relative;
     height: 100vh;
     width: 100%; }
-    #sectionTwo .sectionTwoAnimations h2 {
-      font-family: josefinRegular, Arial, Helvetica, sans-serf;
-      color: #555;
-      width: 100%;
-      height: auto;
-      display: block;
-      font-size: 6em;
-      opacity: 0;
-      -webkit-transform: translateX(0px);
-          -ms-transform: translateX(0px);
-              transform: translateX(0px); }
     #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(3) {
       position: absolute;
       left: 45%;
-      top: 45%;
+      top: 27%;
       z-index: 230; }
-    #sectionTwo .sectionTwoAnimations .homePageTwoHexTriangle {
-      width: 100%;
-      height: auto;
-      display: block; }
-    #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(2) {
-      position: absolute;
-      top: 44%;
-      left: 32%;
-      z-index: 220; }
-    #sectionTwo .sectionTwoAnimations .homePageTwoTitleBullet {
-      width: 100%;
-      height: auto;
-      display: block; }
+      #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(3) h2 {
+        font-family: josefinRegular, Arial, Helvetica, sans-serf;
+        color: #555;
+        width: 100%;
+        height: auto;
+        display: block;
+        font-size: 6em;
+        -webkit-transform: translateX(0px);
+            -ms-transform: translateX(0px);
+                transform: translateX(0px); }
     #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(1) {
       z-index: 210;
       position: absolute;
-      top: 20%;
+      top: 15%;
       left: 5%; }
+      #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(1) .homePageTwoHexTriangle {
+        width: 100%;
+        height: auto;
+        display: block; }
+    #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(2) {
+      position: absolute;
+      top: 26%;
+      left: 32%;
+      z-index: 220; }
+      #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(2) .homePageTwoTitleBullet {
+        width: 100%;
+        height: auto;
+        display: block; }
     #sectionTwo .sectionTwoAnimations .homePageAnimationSectionTwo {
       position: relative;
       float: left;
-      width: 100%;
-      height: 400px; }
+      width: 50%;
+      height: 400px;
+      margin: 25% 0 0 30%; }
     #sectionTwo .sectionTwoAnimations .homePageTwoBulletLines {
       width: 100%;
       height: auto;
@@ -322,17 +324,17 @@ a:hover {
       position: absolute;
       z-index: 240;
       height: auto; }
-    #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexOne {
-      width: 100%;
-      height: auto;
-      display: block; }
     #sectionTwo .sectionTwoAnimations :nth-child(3) div:nth-child(2) {
       position: absolute;
       display: block;
       z-index: 250;
       height: auto;
-      top: -30px;
-      left: 60px; }
+      top: 25px;
+      left: 100px; }
+      #sectionTwo .sectionTwoAnimations :nth-child(3) div:nth-child(2) .homePageTwoSmallHeaderHexOne {
+        width: 100%;
+        height: auto;
+        display: block; }
     #sectionTwo .sectionTwoAnimations .homePageTwoSmallHeaderHexTwo {
       width: 100%;
       height: auto;

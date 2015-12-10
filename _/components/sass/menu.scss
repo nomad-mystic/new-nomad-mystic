@@ -11,16 +11,18 @@
   left: 0;
   transition: all 1s ease;
   z-index:  100;
-  a {
+  div.close-menu,
+  div.open-menu{
     position: absolute;
     left: 95%;
     top: 20px;
     color: white;
     font-size: 32px;
+    cursor: pointer;
   }
 }
 
-.page-wrap {
+.page-wrap  {
   float: right;
   width: 100%;
   transition: width 1s ease;
