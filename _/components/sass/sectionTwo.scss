@@ -1,16 +1,49 @@
 $font-stack: josefinRegular, Arial, Helvetica, sans-serf;
+
 #sectionTwo {
   position: relative;
   z-index: 200;
   .sectionTwoAnimations {
-    position: relative;
-    height: 100vh;
-    width: 100%;
+    margin: 0 5%;
+    width: 90%;
 
-    //:nth-child(1) {
-    //  position: relative;
-    //  height: 50vh;
-    //}
+    #sectionTwoSVG {
+      margin: 5% auto;
+      .st0{
+        display:none;
+      }
+      .st1{
+        display: inline;
+        fill: #FFA500;
+        stroke: #055555;
+        stroke-width: 10;
+        stroke-miterlimit: 10;
+      }
+      .st2{
+        fill:none;
+        stroke: #055555;
+        stroke-width: 10;
+        stroke-miterlimit: 10;
+      }
+      .st3{
+        fill:none;
+        stroke: #555555;
+        stroke-width: 10;
+        stroke-miterlimit: 10;
+      }
+      .st4{
+        font-family: $font-stack;
+        fill: #055555;
+      }
+      .st5{
+        font-size: 50px;
+        color: #555555;
+      }
+      .st6{
+        font-size: 100px;
+        color: #555555;
+      }
+    }
     :nth-child(1) div:nth-child(3) {
       position: absolute;
       left: 45%;

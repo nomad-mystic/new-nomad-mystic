@@ -140,7 +140,7 @@ $(document).ready(function() {
 
 	$('#fullpage').fullpage({
 		anchors: ['page1', 'page2', 'featuredWorks', 'page4', 'page5'],
-		sectionsColor: ['#000', 'orange', 'rgba(0, 0, 0, 0.62)', '#000000', '#222'],
+		sectionsColor: ['#000', 'orange', '#555555', 'orange', '#222'],
 		loopHorizontal: false,
 		resize: true,
 		// Styles
@@ -243,36 +243,36 @@ $(document).ready(function() {
 
     /// homePageSectionTwo
     //THis is from css-trick for scaling divs and their content in side
-    var $sectionTwo = $('#sectionTwo'); // this is the wrapper
-    var $sectionTwoAnimations = $('.sectionTwoAnimations'); /// content inside
-    var $sectionHeight = $sectionTwoAnimations.outerHeight();
-    var $sectionWidth = $sectionTwoAnimations.outerWidth();
-
-    $sectionTwo.resizable({
-        resize: resize
-    });
-
-    function resize(event, ui) {
-        var $scale, $origin;
-
-        $scale = Math.min(
-            ui.size.width / $sectionWidth,
-            ui.size.height / $sectionHeight
-        );
-
-        $sectionTwoAnimations.css({
-           transform: 'scale(' + $scale + ')'
-        });
-    } // End resize
-
-    var startingPoint = {
-      size: {
-          width: $sectionTwo.width(),
-          height: $sectionTwo.height()
-      }
-    };
-
-    resize(null, startingPoint);
+    //var $sectionTwo = $('#sectionTwo'); // this is the wrapper
+    //var $sectionTwoAnimations = $('.sectionTwoAnimations'); /// content inside
+    //var $sectionHeight = $sectionTwoAnimations.outerHeight();
+    //var $sectionWidth = $sectionTwoAnimations.outerWidth();
+    //
+    //$sectionTwo.resizable({
+    //    resize: resize
+    //});
+    //
+    //function resize(event, ui) {
+    //    var $scale, $origin;
+    //
+    //    $scale = Math.min(
+    //        ui.size.width / $sectionWidth,
+    //        ui.size.height / $sectionHeight
+    //    );
+    //
+    //    $sectionTwoAnimations.css({
+    //       transform: 'scale(' + $scale + ')'
+    //    });
+    //} // End resize
+    //
+    //var startingPoint = {
+    //  size: {
+    //      width: $sectionTwo.width(),
+    //      height: $sectionTwo.height()
+    //  }
+    //};
+    //
+    //resize(null, startingPoint);
 
 
     ///Feature Works Section

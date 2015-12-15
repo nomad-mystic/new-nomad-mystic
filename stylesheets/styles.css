@@ -274,9 +274,37 @@ a:hover {
   position: relative;
   z-index: 200; }
   #sectionTwo .sectionTwoAnimations {
-    position: relative;
-    height: 100vh;
-    width: 100%; }
+    margin: 0 5%;
+    width: 90%; }
+    #sectionTwo .sectionTwoAnimations #sectionTwoSVG {
+      margin: 5% auto; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st0 {
+        display: none; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st1 {
+        display: inline;
+        fill: #FFA500;
+        stroke: #055555;
+        stroke-width: 10;
+        stroke-miterlimit: 10; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st2 {
+        fill: none;
+        stroke: #055555;
+        stroke-width: 10;
+        stroke-miterlimit: 10; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st3 {
+        fill: none;
+        stroke: #555555;
+        stroke-width: 10;
+        stroke-miterlimit: 10; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st4 {
+        font-family: josefinRegular, Arial, Helvetica, sans-serf;
+        fill: #055555; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st5 {
+        font-size: 50px;
+        color: #555555; }
+      #sectionTwo .sectionTwoAnimations #sectionTwoSVG .st6 {
+        font-size: 100px;
+        color: #555555; }
     #sectionTwo .sectionTwoAnimations :nth-child(1) div:nth-child(3) {
       position: absolute;
       left: 45%;
@@ -438,12 +466,7 @@ a:hover {
 #sectionThree {
   position: relative; }
   #sectionThree .homePageThreeImgsDiv {
-    min-width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column; }
+    min-width: 100%; }
   #sectionThree h2 {
     margin: 5% auto 2%;
     color: #fff;
