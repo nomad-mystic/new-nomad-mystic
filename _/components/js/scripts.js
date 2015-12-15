@@ -86,11 +86,9 @@ $(document).ready(function() {
 	//	}));
 	//}; // End homePageTwoAnimations
 
-	//////////////////////////////////////////////////////////Hidden Menu Area Functions
+	/////////Hidden Menu Area Functions
 
-
-
-	///////////////////////////////////////////////////////// Audio player
+	//////////////// Audio player
     var audioPlayer = $('.audioPlayer');
     var counter = 0;
 
@@ -135,9 +133,8 @@ $(document).ready(function() {
             audioPlayer[counter].play();
         }
     });
-/// Ful Page Functions for the homePage
+/// FullPage Functions for the homePage
     // Changes the landing url to #page1
-
 	$('#fullpage').fullpage({
 		anchors: ['page1', 'page2', 'featuredWorks', 'page4', 'page5'],
 		sectionsColor: ['#000', 'orange', '#555555', 'orange', '#222'],
@@ -160,8 +157,8 @@ $(document).ready(function() {
                 //$.fn.fullpage.setAutoScrolling(true);
 
             } // end if
-            if(index == 2){
-               //homePageTwoAnimations();
+            if (index == 2){
+                //$.fn.fullpage.setFitToSection(true);
             } // end if
             if (index == 3) {
             	homePageThreeAnimations();
@@ -178,9 +175,9 @@ $(document).ready(function() {
         }
 	});
     $.fn.fullpage.setAutoScrolling(false);
-	$.fn.fullpage.setFitToSection(false);
+    $.fn.fullpage.setFitToSection(false);
 
-
+    // Menu Functions
     var $closeMenuButton = $('.close-menu');
     var $openMenuButton = $('.open-menu');
     var $menuButton = $('.main-header span.fa');
@@ -193,11 +190,7 @@ $(document).ready(function() {
 		// This is going to allow the page to scolling when menu close
 		$.fn.fullpage.setAllowScrolling(true);
 	});
-
-
     // Menu animation for onclick rotating the span fa fa-rotate-45
-
-
     $('.hiddenContent').hide();
     $menuButton.on('click', function() {
         menuClickEvent();
