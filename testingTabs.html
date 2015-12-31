@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Tabs</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst&amp;"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <pre class="prettyprint">
+    <xmp>
+        * {
+
+        div#divContainer {
+        margin-left: auto;
+        margin-right: auto;
+        width: 350px;
+        }
+
+        table {
+        width: 100%;
+        margin-bottom: 2em;
+        }
+
+        th, td {
+        border: 2px solid black;
+        }
+
+        table th {
+        font-size: 1.1em;
+        font-weight: bold;
+        background-color: #7fb;
+        padding: 0.2em;
+        border: 3px solid black;
+        }
+    </xmp>
+        </pre></div>
+        <div role="tabpanel" class="tab-pane" id="profile">
+            <pre class="prettyprint">
+    <xmp>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+        body {
+        padding: 2em;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 90%;
+        background-color: #565;
+        }
+
+        h1 {
+        margin-bottom: 0.8em;
+        }
+
+        div#divContainer {
+        margin-left: auto;
+        margin-right: auto;
+        width: 350px;
+        }
+
+        table {
+        width: 100%;
+        margin-bottom: 2em;
+        }
+
+        th, td {
+        border: 2px solid black;
+        }
+
+        table th {
+        font-size: 1.1em;
+        font-weight: bold;
+        background-color: #7fb;
+        padding: 0.2em;
+        border: 3px solid black;
+        }
+        </xmp>
+        </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+        <div role="tabpanel" class="tab-pane" id="settings">...</div>
+    </div>
+
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
