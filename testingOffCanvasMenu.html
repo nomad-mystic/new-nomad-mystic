@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Off Canvas Menu</title>
+    <!--<link rel="stylesheet" href="">-->
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/velocity/velocity.min.js"></script>
+    <style>
+        nav {
+            position: absolute;
+            z-index: 100;
+            transform: translateX(-110%) translateY(0);
+            width: 100%;
+            background: rgba(95, 158, 160, 0.9);
+            height: 100vh;
+        }
+        .main {
+            position: relative;
+            z-index: 50;
+        }
+    </style>
+
+</head>
+<body>
+
+<section class="main">
+    <nav class="nav">
+        <ul>
+            <li>menu 1</li>
+            <li>menu 2</li>
+            <li>menu 3</li>
+            <li>menu 4</li>
+            <li>menu 5</li>
+        </ul>
+        <button class="close">Close</button>
+    </nav>
+    <header>
+        <button class="open">Open</button>
+        <h1>Testing Header</h1>
+    </header>
+    <article class="content">
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa ducimus, esse ex in ipsam laudantium libero magni molestias pariatur quos repellendus similique ullam. Accusantium delectus deleniti eligendi omnis vel.</span><span>Amet asperiores earum eveniet, expedita facilis ipsum itaque nostrum optio quo, quos sapiente, temporibus vel? Adipisci aliquam consectetur debitis delectus dolores exercitationem facilis libero molestias nihil, saepe? Cum, inventore possimus?</span><span>Accusantium at commodi corporis dolorem fugit mollitia nesciunt quibusdam repudiandae. Alias consectetur excepturi fugit id neque nesciunt quidem voluptatibus. Amet corporis dolor excepturi ipsa neque possimus quo ratione, voluptas voluptatum!</span>
+        </p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi cum, cumque dolor error excepturi facere fugiat id, illum incidunt magnam minima nihil odio pariatur placeat quis rem sit vitae?</span><span>Ab alias aperiam architecto aspernatur autem blanditiis debitis, delectus doloribus ducimus id iste laudantium mollitia optio provident sapiente sed sequi! Corporis fugit necessitatibus totam. A cumque doloremque magni provident vero.</span><span>Ab alias assumenda cum eius error est ipsa itaque magnam modi mollitia perspiciatis porro, repellendus temporibus tenetur unde. Adipisci cumque dolor dolorum eligendi esse eum molestias mollitia perspiciatis repudiandae voluptate!</span>
+        </p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo maxime non optio quo ratione. Adipisci corporis earum et expedita fuga illum impedit iusto libero, magni molestias numquam odio, suscipit vero?</span><span>Accusamus animi consequuntur ducimus eaque eos error eveniet exercitationem facilis iusto labore laboriosam libero magnam, maxime molestiae, necessitatibus obcaecati officia omnis perferendis quam qui reprehenderit soluta sunt totam velit veniam.</span><span>Ab dignissimos dolore, dolorem eum eveniet, exercitationem expedita laborum magni odit porro quam quidem quisquam similique unde vero. Accusamus aliquam at autem iste maxime non pariatur possimus rem velit voluptate!</span>
+        </p>
+    </article>
+    <script>
+        $(document).ready(function() {
+            $('.open').on('click', function() {
+                $('.nav').velocity({
+                    translateX: '0%'
+                }, 1000);
+            });
+            $('.close').on('click', function() {
+                $('.nav').velocity({
+                    translateX: '-110%'
+                }, 1000);
+            });
+        });
+    </script>
+</section>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+</head>
+<body onload="shapeMaker();">
+
+<canvas id="canvas" width="1000" height="1000"></canvas>
+<script>
+
+
+//    context.beginPath();
+//
+//    context.fillRect(100, 50, 300, 100);
+//    context.stroke();
+
+    function shapeMaker(){
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var rotate = 0;
+
+        context.fillStyle = 'green';
+        context.strokeStyle = 'red';
+        context.beginPath();
+        context.arc(200, 200, 100, rotate, 0);
+        context.stroke();
+
+        setInterval(function() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            console.log(rotate);
+            rotate += 1;
+            context.beginPath();
+            context.arc(200, 200, 100, rotate, 2 * Math.PI);
+            context.stroke();
+        }, 1000);
+    }
+
+
+</script>
+
+
+</body>
+</html>
